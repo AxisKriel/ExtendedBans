@@ -11,7 +11,7 @@ using TShockAPI.Hooks;
 
 namespace ExtendedBans
 {
-    [ApiVersion(1, 16)]
+    [ApiVersion(1, 17)]
     public class ExtendedBans : TerrariaPlugin
     {
         public static string SavePath = "tshock";
@@ -142,7 +142,7 @@ namespace ExtendedBans
         void OnChat(ServerChatEventArgs e)
         {
             string text = e.Text;
-            if (!text.StartsWith("/") || text.StartsWith("/me"))
+            if (!text.StartsWith(TShockAPI.Commands.Specifier) || !text.StartsWith(TShockAPI.Commands.SilentSpecifier) || text.StartsWith("/me"))
             {
                 TSPlayer plr = TShock.Players[e.Who];
                 if (EBUtils.IsPlayerMuted(plr.Name))

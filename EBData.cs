@@ -47,7 +47,7 @@ namespace ExtendedBans
             new SqlColumn("BannedBy", MySqlDbType.Text),
             new SqlColumn("Reason", MySqlDbType.Text)
             );
-            SQLWriter.EnsureExists(table);
+            SQLWriter.EnsureTableStructure(table);
             table = new SqlTable("BannedPlayer",
             new SqlColumn("Player", MySqlDbType.Text),
             new SqlColumn("BanDate", MySqlDbType.Int32),
@@ -55,7 +55,7 @@ namespace ExtendedBans
             new SqlColumn("BannedBy", MySqlDbType.Text),
             new SqlColumn("Reason", MySqlDbType.Text)
             );
-            SQLWriter.EnsureExists(table);
+            SQLWriter.EnsureTableStructure(table);
             table = new SqlTable("MutedPlayer",
             new SqlColumn("Player", MySqlDbType.Text),
             new SqlColumn("MuteDate", MySqlDbType.Int32),
@@ -63,7 +63,7 @@ namespace ExtendedBans
             new SqlColumn("MutedBy", MySqlDbType.Text),
             new SqlColumn("Reason", MySqlDbType.Text)
 );
-            SQLWriter.EnsureExists(table);
+            SQLWriter.EnsureTableStructure(table);
         }
 
         public static void RunExec(string query)
